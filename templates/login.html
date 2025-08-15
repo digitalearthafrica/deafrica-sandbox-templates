@@ -3,11 +3,14 @@
 {{ super() }}
 <style>
     #login-main .service-login {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
         vertical-align: top !important;
     }
     .btn-signup {
-        margin-top: 10px;
-        background-color: #4CAF50; /* Green for contrast */
+        background-color: #4CAF50;
         color: white;
     }
 </style>
@@ -27,7 +30,7 @@
             Login
         </a>
         <a role="button" class='btn btn-signup btn-lg' href='{{authenticator_login_url}}&signup=true'>
-            Sign Up
+            Sign up
         </a>
     </div>
     {% else %}
