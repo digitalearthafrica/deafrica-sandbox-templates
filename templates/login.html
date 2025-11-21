@@ -1,5 +1,5 @@
 {% extends "templates/login.html" %}
-{% block head %}
+{% block meta %}
 {{ super() }}
 <style>
     #login-main .service-login {
@@ -15,8 +15,7 @@
     }
 </style>
 {% endblock %}
-
-{% block main %}
+{% block login %}
 <div id="login-main" class="container">
     {% if custom_html %}
     {{ custom_html | safe }}
