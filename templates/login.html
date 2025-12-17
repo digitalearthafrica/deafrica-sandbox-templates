@@ -20,7 +20,7 @@
     {% if custom_html %}
     {{ custom_html | safe }}
     {% elif login_service %}
-    <div>
+    <div style="display: flex; justify-content: center; width: 100%;">
         {% if color_theme|string() == 'deafrica' %}
         <h4 style="color: #336699;font-weight: 600;">{{ html_title }}</h4>
         {% else %}
