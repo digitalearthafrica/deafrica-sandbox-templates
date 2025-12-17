@@ -138,8 +138,8 @@
 </style>
 {% endif %}
 {% endblock %}
-<!-- {% block announcement %} -->
-<!-- {{ super() }} -->
+{% block announcement %}
+{{ super() }}
 <img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo">
 <div class="feedback-button-wrapper">
     <div class="feedback-div">
@@ -166,7 +166,5 @@
         <embed src="{{ announcement_pdf }}" width="100%" height="800px" />
     </div>
 </div>
-{% block announcement %}
-{{ super() }}
 {% endif %}
 {% endblock %}
