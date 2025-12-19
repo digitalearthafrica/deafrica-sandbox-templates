@@ -88,10 +88,10 @@
         vertical-align: middle;
     }
     
-    .container {
+    .announcement-container {
         max-width: 50px;
         margin: 0 auto;
-        padding: 20px;
+        /* padding: 20px; */
     }
 </style>
 {% if color_theme|string() == 'deafrica' %}
@@ -163,7 +163,7 @@
     </div>
 </div>
 {% if announcement_pdf %}
-<div class="container">
+<div class="announcement-container">
     <button class="btn btn-jupyter" type="button" data-toggle="collapse" data-target="#collapseExample"
         aria-expanded="false" aria-controls="collapseExample">
         View announcement pdf
