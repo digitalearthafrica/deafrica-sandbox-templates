@@ -33,12 +33,11 @@
 
 {% endblock %}
 {% block login %}
-<div id="login-main" >
-    
+<div id="login-main" class="container">
+    {% if custom_html %}
+    {{ custom_html | safe }}
+    {% elif login_service %}
     <div class="login-container">
-        {% if custom_html %}
-        {{ custom_html | safe }}
-        {% elif login_service %}
         <div class="deafrica-env-text">
             {% if color_theme|string() == 'deafrica' %}
             <h4 style="color: #ffffff;font-weight: 600;">{{ html_title }}</h4>
