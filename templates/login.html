@@ -38,6 +38,7 @@
     {{ custom_html | safe }}
     {% elif login_service %}
     <div class="login-container">
+        <img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo">
         <div class="deafrica-env-text">
             {% if color_theme|string() == 'deafrica' %}
             <h4 style="color: #ffffff;font-weight: 600;">{{ html_title }}</h4>

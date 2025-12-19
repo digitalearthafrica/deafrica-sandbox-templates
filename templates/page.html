@@ -96,7 +96,7 @@
     }
 
     .login-container {
-        max-width: 800px;
+        max-width: auto;
         height: auto;
         margin: 0 auto;
         background: white;
@@ -154,7 +154,7 @@
 {% endblock %}
 {% block announcement %}
 {{ super() }}
-<img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo">
+<!-- <img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo"> -->
 <div class="feedback-button-wrapper">
     <div class="feedback-div">
         <button type="button" class="feedback-button" onclick="window.open('{{ feedback_endpoint }}')">
