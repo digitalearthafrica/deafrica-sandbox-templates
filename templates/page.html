@@ -211,30 +211,20 @@
 
 
 {% block nav_bar %}
-  {{ super() }}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
 
-  <style>
-    /* keep buttons aligned */
-    .custom-navbar-buttons {
-      position: absolute;
-      right: 20px;
-      top: 8px;
-      z-index: 1050;
-    }
-  </style>
+    {{ super() }}
 
-  <div class="custom-navbar-buttons">
-    {% if not user %}
-      <a class="btn btn-primary navbar-btn"
-         href="https://docs.example.com">
-        Docs
-      </a>
-      <a class="btn btn-success navbar-btn"
-         href="https://support.example.com">
-        Support
-      </a>
-    {% endif %}
+    <ul class="nav navbar-nav navbar-right custom-links">
+      {% if not user %}
+      <li><a href="https://docs.example.com">Docs</a></li>
+      <li><a href="https://support.example.com">Support</a></li>
+      {% endif %}
+    </ul>
+
   </div>
+</nav>
 {% endblock nav_bar %}
 
 
