@@ -8,7 +8,7 @@
 {% block meta %}
 <style>
     .feedback-button-wrapper {
-        position: absolute;
+        position: fixed;
         z-index: 0;
         bottom: 100px;
         right: 30px;
@@ -22,6 +22,7 @@
         color: #3f4854;
         border-radius: 20px;
         box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+        width: fit-content;
     }
 
     .feedback-button {
@@ -55,9 +56,106 @@
         margin-bottom: 50px;
     }
 
+    .page-logo-2 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        margin-bottom: 50px;
+    }
+
     .btn-primary:hover,
     .btn-jupyter:hover {
         background-color: #3a7ca8 !important;
+    }
+    .btn-signup:hover {
+        background-color: #53bd56 !important;
+    }
+
+    .announcement p {
+        margin-top: 0.15rem !important;
+        margin-bottom: 0.15rem !important;
+        font-size: 0.85rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .announcement hr {
+        margin: 0.3rem 0 !important;
+    }
+
+    .main-container {
+        max-width: 900px !important;
+    }
+
+    body {
+        font-size: 13.5px;
+    }
+
+    .navbar-brand img{
+        height: 70px !important;
+        width: auto !important;
+        vertical-align: middle;
+    }
+
+    .navbar {
+        --bs-navbar-color: rgba(black, 0.95);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1030;
+    }
+    
+    .container {
+        max-width: 1200px;
+        text-align: justify !important;
+        margin: 0 auto;
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .container-login {
+        max-height: 50px;
+        padding: 30px;
+        margin: auto;
+    }
+
+    .login-container {
+        max-width: 500px;
+        height: 350px;
+        margin: 0 auto;
+        padding: 20px 40px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    #login-main
+    .deafrica-env-text {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px
+    }
+    .service-login {
+        gap: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        vertical-align: top !important;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('https://raw.githubusercontent.com/digitalearthafrica/deafrica-sandbox-templates/update-the-login-page/templates/2background.jpg');
+        background-size: 155%;
+        background-position: 80% 65%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 100vh;
     }
 </style>
 {% if color_theme|string() == 'deafrica' %}
@@ -66,6 +164,10 @@
     .btn-jupyter {
         background-color: #336699 !important;
         border-color: #2e6da4 !important;
+    }
+    .btn-signup {
+        background-color: #4CAF50 !important;
+        color: white !important;
     }
 
     .progress-bar {
@@ -87,6 +189,10 @@
         background-color: #00A1DE !important;
         border-color: #2e6da4 !important;
     }
+    .btn-signup {
+        background-color: #4CAF50 !important;
+        color: white !important;
+    }
 
     .progress-bar {
         background-color: #00A1DE !important;
@@ -102,9 +208,12 @@
 </style>
 {% endif %}
 {% endblock %}
+
 {% block announcement %}
+<!-- {% block login %}{% endblock %} -->
 {{ super() }}
-<img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo">
+
+<!-- <img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo"> -->
 <div class="feedback-button-wrapper">
     <div class="feedback-div">
         <button type="button" class="feedback-button" onclick="window.open('{{ feedback_endpoint }}')">
