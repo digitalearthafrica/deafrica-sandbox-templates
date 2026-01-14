@@ -211,14 +211,14 @@
 
 
 {% block nav_bar %}
-  {{ super() }}
+  
 
   <style>
     /* keep buttons aligned */
     .custom-navbar-buttons {
         position: absolute;
-        right: 20px;
-        top: 12px;
+        right: 200px;
+        top: 40px;
         z-index: 1050;
         display: flex;
         gap: 20px;
@@ -240,6 +240,8 @@
     <a href="https://support.example.com">Support</a>
     <a href="https://status.example.com">Status</a>
   </div>
+
+  {{ super() }}
 {% endblock nav_bar %}
 
 
