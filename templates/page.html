@@ -209,6 +209,63 @@
 {% endif %}
 {% endblock %}
 
+
+{% block nav_bar %}
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <!-- Brand / Logo -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="{{ base_url }}">
+        <img src="/hub/logo" alt="Logo">
+      </a>
+    </div>
+
+    <!-- LEFT side (optional) -->
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="https://docs.example.com">Docs</a>
+      </li>
+    </ul>
+
+    <!-- RIGHT side buttons -->
+    <ul class="nav navbar-nav navbar-right">
+
+      {% if not user %}
+      <!-- Visible on login page -->
+      <li>
+        <a class="btn btn-primary navbar-btn"
+           href="https://docs.example.com">
+          Documentation
+        </a>
+      </li>
+
+      <li>
+        <a class="btn btn-success navbar-btn"
+           href="https://support.example.com">
+          Support
+        </a>
+      </li>
+      {% endif %}
+
+      {% if user %}
+      <!-- Visible after login -->
+      <li>
+        <a class="btn btn-jupyter navbar-btn"
+           href="/hub/home">
+          My Server
+        </a>
+      </li>
+      {% endif %}
+
+    </ul>
+
+  </div>
+</nav>
+{% endblock nav_bar %}
+
+
+
 {% block announcement %}
 <!-- {% block login %}{% endblock %} -->
 {{ super() }}
