@@ -53,7 +53,7 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 20%;
+        height: 80px;
         margin-bottom: 50px;
     }
 
@@ -107,62 +107,231 @@
 
 {% block announcement %}
 {{ super() }}
-<img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo">
 
-<h1>New Message Here After Logo</h1>
 
-<p lang="fr">
-    <!-- DE Africa souhaite entendre et soutenir les utilisateurs qui souhaitent développer des cas d'application spécifiques sur notre plateforme. Une assistance pour les flux de travail et l'accès aux ressources informatiques pour les applications plus importantes sont disponibles. Veuillez nous contacter via le <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0">formulaire de demande de cas d'utilisation</a>.
-    <br><br>
-    Pour toute difficulté de connexion ou d'autres questions techniques, veuillez contacter <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
-    -->  
-    
-    Cette page permet aux utilisateurs de se connecter ou de s'inscrire à l'environnement de test Digital Earth Africa Sandbox ; en cas de difficultés de connexion ou d'inscription, ou pour toute autre question technique, veuillez contacter <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
+<style>
+    .container2 {
+        background-color: rgb(249, 250, 252) ; 
+        border-bottom-right-radius: 30px; 
+        border-bottom-left-radius: 30px; 
+        height: 100px;
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        
+    }
 
-    <br><br>
-    
-    Digital Earth Africa accompagne les utilisateurs souhaitant développer des cas d'utilisation spécifiques sur notre plateforme. Si vous avez besoin d'assistance pour vos flux de travail ou de ressources supplémentaires pour une charge de travail plus importante, veuillez nous contacter via ce <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0">formulaire de demande de cas d'utilisation.</a>.
+    .container7{
+        background-color: rgb(213, 216, 190);        
+        width: 50%;
+        display: flex;
+        padding: 10px;
+        border-right-color: black;
+        border-right-width: 10px;
+        justify-content: justify;
+    }
 
-    <br><br>
-    
-    <a href="https://helpdesk.digitalearthafrica.org/portal/en/kb/articles/changer-la-langue-de-l-interface-de-la-sandbox-en-fran%C3%A7ais" target="_blank">Changer l'interface en Français</a> |
-    <a href="https://docs.digitalearthafrica.org/fr/latest/" target="_blank">guide de l'utilisateur</a> des données et produits |
-    Notebooks <a href="https://docs.digitalearthafrica.org/fr/latest/sandbox/index.html" target="_blank">en Français</a> |
-    <a href="https://learn.digitalearthafrica.org/" target="_blank">Formation</a> gratuite en ligne |
-    
-    <br><br>
-    
-    En accédant à la Sandbox, vous acceptez <a href="https://docs.digitalearthafrica.org/fr/latest/sandbox/termsconditions.html" target="_blank">les termes et conditions d’utilisation</a>
-    
-    </p>
-    
-    <br><br>
+    .flex-container {
+        display: flex; /* Enables flexbox */
+        gap: 20px;     /* Adds space between columns */
+    }
 
-    <hr style="border: 1px dashed black;" />
-    <br><br>
+  .main-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    <p lang="en">
-    <!-- DE Africa is interested in hearing from and supporting users who would like to develop specific use cases on our platform. Assistance with workflows and access to computational resources for larger applications is available. Please get in touch with us via the <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0 ">use case request form</a>.
-    <br><br>
-    For any difficulties with log in or other technical matters please contact <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
-    -->
+  .logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto 30px;
+    flex-wrap: nowrap;
+  }
+  
+  img.hub-logo {
+    width: 40%;
+  }
 
-    This page allows users to log in or sign up to the Digital Earth Africa Sandbox; if you have challenges on log in or sign up, or other technical questions, please contact <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
-    
-    <br><br>
-    
-    Digital Earth Africa supports users who wish to develop specific use cases on our platform. In this case, if you need support user on workflows or additional resources for larger workload, please contact us via this <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0 ">use case request form</a>.
+  .left-col {
+    margin-top: 20px;
+  }
 
-    <br><br>
+  .brand {
+    flex-shrink: 2;
+  }
+
+  
+
+  #login-box {
+    border: 1px solid silver;       
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
     
-    Data & products <a href="https://docs.digitalearthafrica.org/en/latest/sandbox/access.html" target="_blank">User Guide</a> |
-    Free <a href="https://learn.digitalearthafrica.org/" target="_blank">online training</a> |
-    
-    <br><br>
-    
-    By accessing the Sandbox, you are agreeing to the <a href="https://docs.digitalearthafrica.org/en/latest/sandbox/termsconditions.html" target="_blank">terms and conditions</a>
-          
-</p>
+  }
+
+  .body {
+    padding-bottom: 50px;
+  }
+
+  #login-main .auth-form-body {
+    border-color: rgb(0, 124, 186);
+    color: white;
+  }
+
+  #login-main {
+    margin-top: 5%;
+    height: inherit;
+    width: inherit;
+    margin-bottom: 5%;
+  }
+
+  #login-main .container {
+    width: 100%;
+  }
+
+  footer {
+    border-top: 1px solid silver;
+    padding: 10px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+  }
+
+  footer p {
+    margin: 0 auto 0 auto;
+    text-align: center;
+  }
+
+  #login-main form {
+    vertical-align: top;
+  }
+
+  #login-main .auth-form-header {
+    color: white;
+    background: rgb(219, 170, 0);
+    border: 1px solid;
+    border-color: rgb(0, 124, 186);
+  }
+
+  #insecure-login-warning {
+    color: black;
+  }
+
+  .btn-jupyter.active,
+  .btn-jupyter:active,
+  .open>.dropdown-toggle.btn-jupyter {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #a88400;
+    border-color: #a88400;
+    outline-color: #a88400;
+  }
+
+  #login-main .form-control:focus,
+  #login-main input[type=submit]:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(219, 170, 0);
+    border-color: rgb(219, 170, 0);
+    outline-color: rgb(219, 170, 0);
+  }
+
+  .btn-jupyter {
+    color: #fff;
+    background-color: #F37524;
+    border-color: #E34F21;
+    padding: 10px;
+  }
+  
+  .col-4 {
+    width: 75%;
+  }
+
+</style>
+
+
+<!-- <img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo"> -->
+
+<!-- <h1>New Message Here After Logo</h1> -->
+
+
+<div class="container" style="box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.5); background-color: rgb(255, 255, 255); border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; height: 100px; width: 75%; display: flex; flex-direction: column; align-items: left;"> 
+    <img src="/hub/logo" alt="The Digital Earth Africa Sandbox" class="page-logo" title="logo">
+    <!--href="{{base_url}}" -->
+</div>
+
+<div class="container" style="background: linear-gradient(to top, #808080, #f0eded); border-radius: 25px; width: 75%; height: 150px; align-items: center; display: flex; justify-content: center;">
+    <h1>The Digital Earth Africa Sandbox</h1>
+</div>
+
+<div style="height: 10px;"></div>
+  {% block login %}
+  <div class="container text-justify col-4" style="text-align: justify;">
+    <div id="login-box">
+      {{ super() }}
+        <div class="flex-container">
+            <div class="container7">
+                <p lang="fr">
+                    <!-- DE Africa souhaite entendre et soutenir les utilisateurs qui souhaitent développer des cas d'application spécifiques sur notre plateforme. Une assistance pour les flux de travail et l'accès aux ressources informatiques pour les applications plus importantes sont disponibles. Veuillez nous contacter via le <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0">formulaire de demande de cas d'utilisation</a>.
+                    <br><br>
+                    Pour toute difficulté de connexion ou d'autres questions techniques, veuillez contacter <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
+                    -->  
+                    
+                    Cette page permet aux utilisateurs de se connecter ou de s'inscrire à l'environnement de test Digital Earth Africa Sandbox ; en cas de difficultés de connexion ou d'inscription, ou pour toute autre question technique, veuillez contacter <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
+
+                    <br><br>
+                    
+                    Digital Earth Africa accompagne les utilisateurs souhaitant développer des cas d'utilisation spécifiques sur notre plateforme. Si vous avez besoin d'assistance pour vos flux de travail ou de ressources supplémentaires pour une charge de travail plus importante, veuillez nous contacter via ce <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0">formulaire de demande de cas d'utilisation.</a>.
+
+                    <br><br>
+                    
+                    <a href="https://helpdesk.digitalearthafrica.org/portal/en/kb/articles/changer-la-langue-de-l-interface-de-la-sandbox-en-fran%C3%A7ais" target="_blank">Changer l'interface en Français</a> |
+                    <a href="https://docs.digitalearthafrica.org/fr/latest/" target="_blank">guide de l'utilisateur</a> des données et produits |
+                    Notebooks <a href="https://docs.digitalearthafrica.org/fr/latest/sandbox/index.html" target="_blank">en Français</a> |
+                    <a href="https://learn.digitalearthafrica.org/" target="_blank">Formation</a> gratuite en ligne |
+                    
+                    <br><br>
+                    
+                    En accédant à la Sandbox, vous acceptez <a href="https://docs.digitalearthafrica.org/fr/latest/sandbox/termsconditions.html" target="_blank">les termes et conditions d’utilisation</a>
+                    
+                </p>
+                    
+                <br><br>
+
+                <hr style="border: 1px dashed black;" />
+
+                <br><br>
+
+                <p lang="en">
+                    <!-- DE Africa is interested in hearing from and supporting users who would like to develop specific use cases on our platform. Assistance with workflows and access to computational resources for larger applications is available. Please get in touch with us via the <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0 ">use case request form</a>.
+                    <br><br>
+                    For any difficulties with log in or other technical matters please contact <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
+                    -->
+                    
+                    This page allows users to log in or sign up to the Digital Earth Africa Sandbox; if you have challenges on log in or sign up, or other technical questions, please contact <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
+                    
+                    <br><br>
+                    
+                    Digital Earth Africa supports users who wish to develop specific use cases on our platform. In this case, if you need support user on workflows or additional resources for larger workload, please contact us via this <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0 ">use case request form</a>.
+
+                    <br><br>
+                    
+                    Data & products <a href="https://docs.digitalearthafrica.org/en/latest/sandbox/access.html" target="_blank">User Guide</a> |
+                    Free <a href="https://learn.digitalearthafrica.org/" target="_blank">online training</a> |
+                    
+                    <br><br>
+                    
+                    By accessing the Sandbox, you are agreeing to the <a href="https://docs.digitalearthafrica.org/en/latest/sandbox/termsconditions.html" target="_blank">terms and conditions</a>
+                        
+                </p>
+            </div>
+
+            <div class="container7">                
+                DE Africa est heureux de vous proposer l'accès à la Sandbox via le formulaire d'inscription. Les anciens utilisateurs doivent se réinscrire en fournissant une adresse e-mail, un numéro de téléphone et d'autres informations sur l'utilisation prévue. Les utilisateurs disposant d'un numéro de téléphone dans les pays suivants ne peuvent actuellement pas effectuer la vérification requise pour s'inscrire à la Sandbox :      
+            </div>
+        </div>
+    </div>
+
+  </div>
 
 
 <div class="feedback-button-wrapper">
