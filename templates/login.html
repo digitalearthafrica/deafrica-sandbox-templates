@@ -1,12 +1,17 @@
 {% extends "templates/login.html" %}
+
 {% block meta %}
 {{ super() }}
+
+<div> <h1>Message 1</h1> </div>
+
 <style>
     #login-main .service-login {
         vertical-align: top !important;
     }
 </style>
 {% endblock %}
+
 {% block login %}
 <div id="login-main" class="container">
     {% if custom_html %}
@@ -46,5 +51,8 @@
         </div>
     </form>
     {% endif %}
+
+    <div> <h1>Message 2</h1> </div>
+    
 </div>
 {% endblock login %}
