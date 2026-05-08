@@ -1,18 +1,16 @@
 {% extends "templates/page.html" %}
 {% block title %}{{ html_title }}{% endblock %}
-
 {% block favicon %}
 <link rel="icon"
     href="https://github.com/GeoscienceAustralia/deafrica-sandbox-templates/blob/master/branding/favicon/{{ favicon_file }}"
     type="image/x-icon">
 {% endblock %}
-
 {% block meta %}
 <style>
     .feedback-button-wrapper {
-        position: absolute;
+        position: fixed;
         z-index: 0;
-        bottom: 100px;
+        bottom: 30px;
         right: 30px;
         margin: 0;
     }
@@ -24,6 +22,7 @@
         color: #3f4854;
         border-radius: 20px;
         box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.12), 0 2px 2px 0 rgba(0, 0, 0, 0.24);
+        width: fit-content;
     }
 
     .feedback-button {
@@ -53,13 +52,110 @@
         display: block;
         margin-left: auto;
         margin-right: auto;
-        height: 80px;
+        width: 20%;
+        margin-bottom: 50px;
+    }
+
+    .page-logo-2 {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
         margin-bottom: 50px;
     }
 
     .btn-primary:hover,
     .btn-jupyter:hover {
         background-color: #3a7ca8 !important;
+    }
+    .btn-signup:hover {
+        background-color: #53bd56 !important;
+    }
+
+    .announcement p {
+        margin-top: 0.15rem !important;
+        margin-bottom: 0.15rem !important;
+        font-size: 0.85rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .announcement hr {
+        margin: 0.3rem 0 !important;
+    }
+
+    .main-container {
+        max-width: 900px !important;
+    }
+
+    body {
+        font-size: 13.5px;
+    }
+
+    .navbar-brand img{
+        height: 70px !important;
+        width: auto !important;
+        vertical-align: middle;
+    }
+
+    .navbar {
+        --bs-navbar-color: rgba(black, 0.95);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1030;
+    }
+    
+    .container {
+        max-width: 1200px;
+        text-align: justify !important;
+        margin: 0 auto;
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .container-login {
+        max-height: 50px;
+        padding: 30px;
+        margin: auto;
+    }
+
+    .login-container {
+        max-width: 500px;
+        height: 350px;
+        margin: 0 auto;
+        padding: 20px 40px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    #login-main
+    .deafrica-env-text {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 30px
+    }
+    .service-login {
+        gap: 30px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        vertical-align: top !important;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('https://raw.githubusercontent.com/digitalearthafrica/deafrica-sandbox-templates/update-the-login-page/templates/2background.jpg');
+        background-size: 155%;
+        background-position: 80% 65%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        height: 100vh;
     }
 </style>
 {% if color_theme|string() == 'deafrica' %}
@@ -68,6 +164,10 @@
     .btn-jupyter {
         background-color: #336699 !important;
         border-color: #2e6da4 !important;
+    }
+    .btn-signup {
+        background-color: #4CAF50 !important;
+        color: white !important;
     }
 
     .progress-bar {
@@ -89,6 +189,10 @@
         background-color: #00A1DE !important;
         border-color: #2e6da4 !important;
     }
+    .btn-signup {
+        background-color: #4CAF50 !important;
+        color: white !important;
+    }
 
     .progress-bar {
         background-color: #00A1DE !important;
@@ -105,235 +209,46 @@
 {% endif %}
 {% endblock %}
 
-{% block announcement %}
-{{ super() }}
 
-
-<style>
-    .container2 {
-        background-color: rgb(249, 250, 252) ; 
-        border-bottom-right-radius: 30px; 
-        border-bottom-left-radius: 30px; 
-        height: 100px;
-        width: 75%;
+{% block nav_bar %}
+  <style>
+    .custom-navbar-buttons {
+        position: absolute;
+        right: 200px;
+        top: 40px;
+        z-index: 1050;
         display: flex;
-        flex-direction: column;
-        
+        gap: 20px;
     }
 
-    .container7{
-        background-color: rgb(213, 216, 190);        
-        width: 50%;
-        display: flex;
-        padding: 10px;
-        border-right-color: black;
-        border-right-width: 10px;
-        justify-content: justify;
+    .custom-navbar-buttons a {
+        font-family: sans-serif;
+        font-size: 1rem;
+        color: inherit;
+        text-decoration: none;
+        font-weight: 500;
     }
 
-    .flex-container {
-        display: flex; /* Enables flexbox */
-        gap: 20px;     /* Adds space between columns */
+    .custom-navbar-buttons a:hover {
+        text-decoration: underline;
     }
+  </style>
 
-  .main-content {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .logos {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: auto 30px;
-    flex-wrap: nowrap;
-  }
-  
-  img.hub-logo {
-    width: 40%;
-  }
-
-  .left-col {
-    margin-top: 20px;
-  }
-
-  .brand {
-    flex-shrink: 2;
-  }
-
-  
-
-  #login-box {
-    border: 1px solid silver;       
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
-    
-  }
-
-  .body {
-    padding-bottom: 50px;
-  }
-
-  #login-main .auth-form-body {
-    border-color: rgb(0, 124, 186);
-    color: white;
-  }
-
-  #login-main {
-    margin-top: 5%;
-    height: inherit;
-    width: inherit;
-    margin-bottom: 5%;
-  }
-
-  #login-main .container {
-    width: 100%;
-  }
-
-  footer {
-    border-top: 1px solid silver;
-    padding: 10px;
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-  }
-
-  footer p {
-    margin: 0 auto 0 auto;
-    text-align: center;
-  }
-
-  #login-main form {
-    vertical-align: top;
-  }
-
-  #login-main .auth-form-header {
-    color: white;
-    background: rgb(219, 170, 0);
-    border: 1px solid;
-    border-color: rgb(0, 124, 186);
-  }
-
-  #insecure-login-warning {
-    color: black;
-  }
-
-  .btn-jupyter.active,
-  .btn-jupyter:active,
-  .open>.dropdown-toggle.btn-jupyter {
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #a88400;
-    border-color: #a88400;
-    outline-color: #a88400;
-  }
-
-  #login-main .form-control:focus,
-  #login-main input[type=submit]:focus {
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgb(219, 170, 0);
-    border-color: rgb(219, 170, 0);
-    outline-color: rgb(219, 170, 0);
-  }
-
-  .btn-jupyter {
-    color: #fff;
-    background-color: #F37524;
-    border-color: #E34F21;
-    padding: 10px;
-  }
-  
-  .col-4 {
-    width: 75%;
-  }
-
-</style>
-
-
-<!-- <img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo"> -->
-
-<!-- <h1>New Message Here After Logo</h1> -->
-
-
-<div class="container" style="box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.5); background-color: rgb(255, 255, 255); border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; height: 100px; width: 75%; display: flex; flex-direction: column; align-items: left;"> 
-    <img src="/hub/logo" alt="The Digital Earth Africa Sandbox" class="page-logo" title="logo">
-    <!--href="{{base_url}}" -->
-</div>
-
-<div class="container" style="background: linear-gradient(to top, #808080, #f0eded); border-radius: 25px; width: 75%; height: 150px; align-items: center; display: flex; justify-content: center;">
-    <h1>The Digital Earth Africa Sandbox</h1>
-</div>
-
-<div style="height: 10px;"></div>
-  {% block login %}
-  <div class="container text-justify col-4" style="text-align: justify;">
-    <div id="login-box">
-      {{ super() }}
-        <div class="flex-container">
-            <div class="container7">
-                <p lang="fr">
-                    <!-- DE Africa souhaite entendre et soutenir les utilisateurs qui souhaitent développer des cas d'application spécifiques sur notre plateforme. Une assistance pour les flux de travail et l'accès aux ressources informatiques pour les applications plus importantes sont disponibles. Veuillez nous contacter via le <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0">formulaire de demande de cas d'utilisation</a>.
-                    <br><br>
-                    Pour toute difficulté de connexion ou d'autres questions techniques, veuillez contacter <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
-                    -->  
-                    
-                    Cette page permet aux utilisateurs de se connecter ou de s'inscrire à l'environnement de test Digital Earth Africa Sandbox ; en cas de difficultés de connexion ou d'inscription, ou pour toute autre question technique, veuillez contacter <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
-
-                    <br><br>
-                    
-                    Digital Earth Africa accompagne les utilisateurs souhaitant développer des cas d'utilisation spécifiques sur notre plateforme. Si vous avez besoin d'assistance pour vos flux de travail ou de ressources supplémentaires pour une charge de travail plus importante, veuillez nous contacter via ce <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0">formulaire de demande de cas d'utilisation.</a>.
-
-                    <br><br>
-                    
-                    <a href="https://helpdesk.digitalearthafrica.org/portal/en/kb/articles/changer-la-langue-de-l-interface-de-la-sandbox-en-fran%C3%A7ais" target="_blank">Changer l'interface en Français</a> |
-                    <a href="https://docs.digitalearthafrica.org/fr/latest/" target="_blank">guide de l'utilisateur</a> des données et produits |
-                    Notebooks <a href="https://docs.digitalearthafrica.org/fr/latest/sandbox/index.html" target="_blank">en Français</a> |
-                    <a href="https://learn.digitalearthafrica.org/" target="_blank">Formation</a> gratuite en ligne |
-                    
-                    <br><br>
-                    
-                    En accédant à la Sandbox, vous acceptez <a href="https://docs.digitalearthafrica.org/fr/latest/sandbox/termsconditions.html" target="_blank">les termes et conditions d’utilisation</a>
-                    
-                </p>
-                    
-                <br><br>
-
-                <hr style="border: 1px dashed black;" />
-
-                <br><br>
-
-                <p lang="en">
-                    <!-- DE Africa is interested in hearing from and supporting users who would like to develop specific use cases on our platform. Assistance with workflows and access to computational resources for larger applications is available. Please get in touch with us via the <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0 ">use case request form</a>.
-                    <br><br>
-                    For any difficulties with log in or other technical matters please contact <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
-                    -->
-                    
-                    This page allows users to log in or sign up to the Digital Earth Africa Sandbox; if you have challenges on log in or sign up, or other technical questions, please contact <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
-                    
-                    <br><br>
-                    
-                    Digital Earth Africa supports users who wish to develop specific use cases on our platform. In this case, if you need support user on workflows or additional resources for larger workload, please contact us via this <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0 ">use case request form</a>.
-
-                    <br><br>
-                    
-                    Data & products <a href="https://docs.digitalearthafrica.org/en/latest/sandbox/access.html" target="_blank">User Guide</a> |
-                    Free <a href="https://learn.digitalearthafrica.org/" target="_blank">online training</a> |
-                    
-                    <br><br>
-                    
-                    By accessing the Sandbox, you are agreeing to the <a href="https://docs.digitalearthafrica.org/en/latest/sandbox/termsconditions.html" target="_blank">terms and conditions</a>
-                        
-                </p>
-            </div>
-
-            <div class="container7">                
-                DE Africa est heureux de vous proposer l'accès à la Sandbox via le formulaire d'inscription. Les anciens utilisateurs doivent se réinscrire en fournissant une adresse e-mail, un numéro de téléphone et d'autres informations sur l'utilisation prévue. Les utilisateurs disposant d'un numéro de téléphone dans les pays suivants ne peuvent actuellement pas effectuer la vérification requise pour s'inscrire à la Sandbox :      
-            </div>
-        </div>
-    </div>
-
+  <div class="custom-navbar-buttons">
+    <a href="https://docs.digitalearthafrica.org/en/latest/" target="_blank" rel="noopener noreferrer">Documentation</a>
+    <a href="https://learn.digitalearthafrica.org/" target="_blank" rel="noopener noreferrer">Learn</a>
+    <a href="https://digitalearthafrica.org/en_za/support/" target="_blank" rel="noopener noreferrer">Support</a>
   </div>
 
+  {{ super() }}
+{% endblock nav_bar %}
 
+
+{% block announcement %}
+<!-- {% block login %}{% endblock %} -->
+{{ super() }}
+
+<!-- <img src="/hub/logo" alt="sandbox-logo" class="page-logo" title="logo"> -->
 <div class="feedback-button-wrapper">
     <div class="feedback-div">
         <button type="button" class="feedback-button" onclick="window.open('{{ feedback_endpoint }}')">
