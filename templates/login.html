@@ -16,14 +16,6 @@
     {{ custom_html | safe }}
     {% elif login_service %}
     <div class="login-container">
-               
-        <div class="deafrica-env-text">
-            {% if color_theme|string() == 'deafrica' %}
-            <h4 style="color: #333333;;font-weight: 600;">{{ html_title }}</h4>
-            {% else %}
-            <h4 style="color: #333333;;font-weight: 600;">{{ html_title }}</h4>
-            {% endif %}
-        </div>
 
         <div class="service-login">
             <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}' style="width: 140px;">
