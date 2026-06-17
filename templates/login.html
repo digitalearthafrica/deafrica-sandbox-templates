@@ -7,112 +7,109 @@
 
 <div class="login-container2" style="border-width: 0px; box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.5); background-image: url('https://raw.githubusercontent.com/digitalearthafrica/deafrica-sandbox-templates/update-the-login-page/templates/2background.jpg'); border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; height: 100px; width: 80%; display: flex; flex-direction: column;align-items: center;">
     <h1 style="color: rgb(255, 255, 255);">The Digital Earth Africa Sandbox</h1>
-</div>
 
-<br>
 
-<div id="login-main" class="container-login">
-    {% if custom_html %}
-    {{ custom_html | safe }}
-    {% elif login_service %}
-    <div class="login-container">
+    <br>
+    <br>
+    <br>
 
-        <div class="service-login">
-            <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}' style="width: 140px;">
-                Log in
-            </a>
-            <a role="button" class='btn btn-signup btn-lg' href='{{signup_url}}' style="width: 140px;">
-                Sign up
-            </a>
+    
+
+
+    <div id="login-main" class="container-login">
+        {% if custom_html %}
+        {{ custom_html | safe }}
+        {% elif login_service %}
+        <div class="login-container">
+    
+            <div class="service-login">
+                <a role="button" class='btn btn-jupyter btn-lg' href='{{authenticator_login_url}}' style="width: 140px;">
+                    Log in
+                </a>
+                <a role="button" class='btn btn-signup btn-lg' href='{{signup_url}}' style="width: 140px;">
+                    Sign up
+                </a>
+            </div>
         </div>
-    </div>
+        
+        <br>
+        <br>
     
-    <br>
-    <br>
-
-    <div class="login-container2" style="border-width: 0px; box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.5); border-radius: 25px">    
-    
-        This page allows users to log in or sign up to the Digital Earth Africa Sandbox; if you have challenges logging in or signing up, or other technical questions, please contact <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
+        <div class="login-container2" style="border-width: 0px; box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.5); border-radius: 25px">    
         
-        <br><br>
-                
-        Note that the system will automatically <span style="color: red; font-weight: bold;">sign out after 3 hours</span>. Also, the system will <span style="color: red; font-weight: bold;">reset your account after 24 hours of no activity</span>.
-
-        <br><br>
-        
-        Digital Earth Africa supports users who wish to develop specific use cases on our platform. In this case, if you need support for users on workflows or additional resources for a larger workload, please contact us via this <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0 ">use case request form</a>.
-
-        <br><br>
-        
-        Data & products <a href="https://docs.digitalearthafrica.org/en/latest/sandbox/access.html" target="_blank">User Guide</a> |
-        Free <a href="https://learn.digitalearthafrica.org/" target="_blank">online training</a> |
-        
-        <br><br>
-        
-        By accessing the Sandbox, you are agreeing to the <a href="https://docs.digitalearthafrica.org/en/latest/sandbox/termsconditions.html" target="_blank">terms and conditions</a>
-
-        <br><br>
-
-        <hr style="border: 1px dashed black;" />
-
-        <br>     
-
-        Cette page permet aux utilisateurs de se connecter ou de s'inscrire à l'environnement de test Digital Earth Africa ; si vous rencontrez des difficultés pour vous connecter ou vous inscrire, ou pour toute autre question technique, veuillez contacter <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
-
-        <br><br>
-       
-        Veuillez noter que le système vous <span style="color: red; font-weight: bold;">déconnectera automatiquement après 3 heures</span>. De plus, votre compte sera <span style="color: red; font-weight: bold;">réinitialisé après 24 heures d'inactivité</span>.
-
-        <br><br>
-        
-        Digital Earth Africa accompagne les utilisateurs souhaitant développer des cas d'utilisation spécifiques sur notre plateforme. Si vous avez besoin d'assistance pour vos flux de travail ou de ressources supplémentaires pour une charge de travail plus importante, veuillez nous contacter via ce <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0">formulaire de demande de cas d'utilisation.</a>.
-
-        <br><br>
-        
-        <a href="https://helpdesk.digitalearthafrica.org/portal/en/kb/articles/changer-la-langue-de-l-interface-de-la-sandbox-en-fran%C3%A7ais" target="_blank">Changer l'interface en Français</a> |
-        <a href="https://docs.digitalearthafrica.org/fr/latest/" target="_blank">guide de l'utilisateur</a> des données et produits |
-        Notebooks <a href="https://docs.digitalearthafrica.org/fr/latest/sandbox/index.html" target="_blank">en Français</a> |
-        <a href="https://learn.digitalearthafrica.org/" target="_blank">Formation</a> gratuite en ligne |
-        
-        <br><br>
-        
-        En accédant à la Sandbox, vous acceptez <a href="https://docs.digitalearthafrica.org/fr/latest/sandbox/termsconditions.html" target="_blank">les termes et conditions d’utilisation</a>
+            This page allows users to log in or sign up to the Digital Earth Africa Sandbox; if you have challenges logging in or signing up, or other technical questions, please contact <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
+            
+            <br><br>
                     
+            Note that the system will automatically <span style="color: red; font-weight: bold;">sign out after 3 hours</span>. Also, the system will <span style="color: red; font-weight: bold;">reset your account after 24 hours of no activity</span>.
+    
+            <br><br>
+            
+            Digital Earth Africa supports users who wish to develop specific use cases on our platform. In this case, if you need support for users on workflows or additional resources for a larger workload, please contact us via this <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0 ">use case request form</a>.
+    
+            <br><br>
+            
+            Data & products <a href="https://docs.digitalearthafrica.org/en/latest/sandbox/access.html" target="_blank">User Guide</a> |
+            Free <a href="https://learn.digitalearthafrica.org/" target="_blank">online training</a> |
+            
+            <br><br>
+            
+            By accessing the Sandbox, you are agreeing to the <a href="https://docs.digitalearthafrica.org/en/latest/sandbox/termsconditions.html" target="_blank">terms and conditions</a>
+    
+            <br><br>
+    
+            <hr style="border: 1px dashed black;" />
+    
+            <br>     
+    
+            Cette page permet aux utilisateurs de se connecter ou de s'inscrire à l'environnement de test Digital Earth Africa ; si vous rencontrez des difficultés pour vous connecter ou vous inscrire, ou pour toute autre question technique, veuillez contacter <a href="mailto:helpdesk@digitalearthafrica.org">helpdesk@digitalearthafrica.org</a>.
+    
+            <br><br>
+           
+            Veuillez noter que le système vous <span style="color: red; font-weight: bold;">déconnectera automatiquement après 3 heures</span>. De plus, votre compte sera <span style="color: red; font-weight: bold;">réinitialisé après 24 heures d'inactivité</span>.
+    
+            <br><br>
+            
+            Digital Earth Africa accompagne les utilisateurs souhaitant développer des cas d'utilisation spécifiques sur notre plateforme. Si vous avez besoin d'assistance pour vos flux de travail ou de ressources supplémentaires pour une charge de travail plus importante, veuillez nous contacter via ce <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0qtTtzHrblDK5sXoh5shxtobOOGY_6QodC16Vsh1X8Teq6A/viewform?vc=0&c=0&w=1&flr=0">formulaire de demande de cas d'utilisation.</a>.
+    
+            <br><br>
+            
+            <a href="https://helpdesk.digitalearthafrica.org/portal/en/kb/articles/changer-la-langue-de-l-interface-de-la-sandbox-en-fran%C3%A7ais" target="_blank">Changer l'interface en Français</a> |
+            <a href="https://docs.digitalearthafrica.org/fr/latest/" target="_blank">guide de l'utilisateur</a> des données et produits |
+            Notebooks <a href="https://docs.digitalearthafrica.org/fr/latest/sandbox/index.html" target="_blank">en Français</a> |
+            <a href="https://learn.digitalearthafrica.org/" target="_blank">Formation</a> gratuite en ligne |
+            
+            <br><br>
+            
+            En accédant à la Sandbox, vous acceptez <a href="https://docs.digitalearthafrica.org/fr/latest/sandbox/termsconditions.html" target="_blank">les termes et conditions d’utilisation</a>
+                        
+        </div>
+        
+        {% else %}
+        <form action="{{login_url}}?next={{next}}" method="post" role="form">
+            <div class="auth-form-header">
+                Sign in
+            </div>
+            <div class='auth-form-body'>
+                <p id='insecure-login-warning' class='hidden'>
+                    Warning: JupyterHub seems to be served over an unsecured HTTP connection.
+                    We strongly recommend enabling HTTPS for JupyterHub.
+                </p>
+                {% if login_error %}
+                <p class="login_error">
+                    {{login_error}}
+                </p>
+                {% endif %}
+                <label for="username_input">Username:</label>
+                <input id="username_input" type="text" autocapitalize="off" autocorrect="off" class="form-control"
+                    name="username" val="{{username}}" tabindex="1" autofocus="autofocus" />
+                <label for='password_input'>Password:</label>
+                <input type="password" class="form-control" name="password" id="password_input" tabindex="2" />
+                <input type="submit" id="login_submit" class='btn btn-jupyter' value='Sign In' tabindex="3" />
+            </div>
+        </form>
+        {% endif %}
     </div>
-    
-    <style>
-        .container7{
-            background-color: rgb(213, 216, 190);        
-            width: 100%;        
-            padding: 10px;
-            border-right-color: black;
-            border-right-width: 10px;
-    }
-    </style>
-    
-    {% else %}
-    <form action="{{login_url}}?next={{next}}" method="post" role="form">
-        <div class="auth-form-header">
-            Sign in
-        </div>
-        <div class='auth-form-body'>
-            <p id='insecure-login-warning' class='hidden'>
-                Warning: JupyterHub seems to be served over an unsecured HTTP connection.
-                We strongly recommend enabling HTTPS for JupyterHub.
-            </p>
-            {% if login_error %}
-            <p class="login_error">
-                {{login_error}}
-            </p>
-            {% endif %}
-            <label for="username_input">Username:</label>
-            <input id="username_input" type="text" autocapitalize="off" autocorrect="off" class="form-control"
-                name="username" val="{{username}}" tabindex="1" autofocus="autofocus" />
-            <label for='password_input'>Password:</label>
-            <input type="password" class="form-control" name="password" id="password_input" tabindex="2" />
-            <input type="submit" id="login_submit" class='btn btn-jupyter' value='Sign In' tabindex="3" />
-        </div>
-    </form>
-    {% endif %}
+
 </div>
 {% endblock login %}
