@@ -1,16 +1,16 @@
 {% extends "templates/page.html" %}
 {% block title %}{{ html_title }}{% endblock %}
 {% block favicon %}
-<link rel="icon"
-    href="https://github.com/GeoscienceAustralia/deafrica-sandbox-templates/blob/master/branding/favicon/{{ favicon_file }}"
+<link rel="icon"    
+    href="https://raw.githubusercontent.com/digitalearthafrica/deafrica-sandbox-templates/dev-login-page-updates-v3/templates/deafrica-favicon.ico"
     type="image/x-icon">
 {% endblock %}
 {% block meta %}
 <style>
     .feedback-button-wrapper {
         position: fixed;
-        z-index: 0;
-        bottom: 30px;
+        z-index: 0; 
+        bottom: 130px;
         right: 30px;
         margin: 0;
     }
@@ -120,37 +120,45 @@
     }
 
     .login-container {
-        width: 100%;
-        height: 350px;
+        width: 500px;
+        height: 90px;
         margin: 0 auto;
         padding: 20px 40px;
-        background-color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(170, 162, 162, 0.6);
         border-radius: 20px;
+        border: 2px solid rgba(10, 0, 0, 0.4);
+    }
+
+    .login-container2 {        
+        margin: 0 auto;
+        padding: 20px 20px;
+        border-radius: 0.5%;
         border: 2px solid rgba(255, 255, 255, 0.4);
+        background-color: rgb(213, 216, 190); 
     }
 
     #login-main
-    .deafrica-env-text {
+    .deafrica-env-text
+    {
         display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 30px
+        justify-content: center;        
+        margin-bottom: 30px;
+        align-items: center;
+        flex-direction: column;
+        display: flex;
     }
+    
     .service-login {
         gap: 30px;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        vertical-align: top !important;
-        margin-bottom: 30px;
-        padding-bottom: 30px;
     }
     body {
         font-family: Arial, sans-serif;
         margin: 0;
-        padding: 0;
-        background-image: url('https://raw.githubusercontent.com/digitalearthafrica/deafrica-sandbox-templates/update-the-login-page/templates/2background.jpg');
+        padding: 0;        
         background-size: 155%;
         background-position: 80% 65%;
         background-repeat: no-repeat;
@@ -165,6 +173,7 @@
         background-color: #336699 !important;
         border-color: #2e6da4 !important;
     }
+    
     .btn-signup {
         background-color: #4CAF50 !important;
         color: white !important;
@@ -213,8 +222,8 @@
 {% block nav_bar %}
   <style>
     .custom-navbar-buttons {
-        position: absolute;
-        right: 200px;
+        position: fixed;    
+        left: 300px;
         top: 40px;
         z-index: 1050;
         display: flex;
@@ -232,13 +241,39 @@
     .custom-navbar-buttons a:hover {
         text-decoration: underline;
     }
+
+      
+    .custom-navbar-buttons-footer {
+        position: fixed; 
+        bottom: 0px; 
+        left: 0px;
+        height:100px; 
+        background-color:rgb(236, 237, 238); 
+        width: 100%;
+        align-items: center;
+        display: flex; /* Grid */
+        flex-direction: row;
+        flex-wrap: wrap; 
+        padding-left: 10%;
+    }
+
+    .custom-navbar-buttons-footer a {
+        font-family: sans-serif;
+        font-size: 1rem;
+        color: #369;
+        text-decoration: none;
+        transition: color 0.3s ease; /* Smooth hover transition */
+        display: inline-block;  /* Set your desired width */
+        text-align: center;   /* Centers the text horizontally */
+        padding-left: 20px;
+    }
+
+    .custom-navbar-buttons-footer a:hover {
+        color: #00adb5; /* Highlight color on hover */
+    }
   </style>
 
-  <div class="custom-navbar-buttons">
-    <a href="https://docs.digitalearthafrica.org/en/latest/" target="_blank" rel="noopener noreferrer">Documentation</a>
-    <a href="https://learn.digitalearthafrica.org/" target="_blank" rel="noopener noreferrer">Learn</a>
-    <a href="https://digitalearthafrica.org/en_za/support/" target="_blank" rel="noopener noreferrer">Support</a>
-  </div>
+<!-- cut here -->
 
   {{ super() }}
 {% endblock nav_bar %}
